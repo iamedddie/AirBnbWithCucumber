@@ -14,12 +14,5 @@ public enum SeasonType {
         return rate;
     }
 
-    public static SeasonType getByValue(double value) {
-        for(SeasonType season: values()) {
-            if(season.getValue() == value) {
-                return season;
-            }
-        }
-        throw new IllegalArgumentException("No season found.");
-    }
+
 }
