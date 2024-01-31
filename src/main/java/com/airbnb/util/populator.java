@@ -24,5 +24,20 @@ public class populator {
         room2.setName("Slickrock");
         room2.setRate(125);
         roomRepository.save(room2);
+
+        Room room3 = new Room();
+        room3.setName("Penthouse");
+        room3.setRate(200);
+        roomRepository.save(room3);
+
+        Room room4 = new Room();
+        room4.setName("Deluxe");
+        room4.setRate(300);
+        roomRepository.save(room4);
+
+        Room room5 = new Room();
+        room5.setName("Premium");
+        room5.setRate(250);
+        roomRepository.save(room5);
     }
 }

@@ -16,5 +16,5 @@ Feature:
 
     Examples:
       | Name           | Room          | Season   | Days |  Amount   |
-      | "Bryan Hansen" | "Cliffhanger" | "SPRING" |    3 |   600.0   |
+      | "Bryan Hansen" | c | "SPRING" |    3 |   600.0   |
       | "Sara Hansen"  | "Slickrock"   | "FALL"   |    5 |   781.25  |

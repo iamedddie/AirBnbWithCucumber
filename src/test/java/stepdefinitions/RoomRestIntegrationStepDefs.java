@@ -12,19 +12,21 @@ public class RoomRestIntegrationStepDefs {
     RestClient restClient;
     String uriBase;
     Room room;
-    @Given("I have a Rest Spring Endpoint")
-    public void iHaveARestSpringEndpoint() {
-        uriBase="http://localhost:8080";
+    @Given("I have a Rest Spring {string}")
+    public void iHaveARestSpringEndpoint( String uriBase) {
+        this.uriBase=uriBase;
         restClient=RestClient.create();
     }
 
-    @When("I call the room endpoint by name for rooms")
-    public void iCallTheRoomEndpointByNameForRooms() {
-        room=restClient.get().uri(uriBase+"/room?name=Cliffhanger").retrieve().body(Room.class);
+    @When("I call the {string} by name for rooms")
+    public void iCallTheRoomEndpointByNameForRooms(String roomEndpoint) {
+        room=restClient.get().uri(uriBase+roomEndpoint).retrieve().body(Room.class);
     }
 
-    @Then("Cliffhanger is the result from the server")
-    public void cliffhangerIsTheResultFromTheServer() {
-        assertEquals("Cliffhanger",room.getName());
+    @Then("{string} is the result from the server")
+    public void cliffhangerIsTheResultFromTheServer(String roomName) {
+        assertEquals(roomName,room.getName());
     }
+
+
 }

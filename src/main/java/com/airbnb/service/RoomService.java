@@ -8,4 +8,8 @@ public interface RoomService {
     List<Room> findAll();
 
     Room findByName(String name);
+    Room findCheapestRoom();
+    Room findMostExpensiveRoom();
+    Room findNewestRoom();
+    Room save(String name,double rate);
 }
